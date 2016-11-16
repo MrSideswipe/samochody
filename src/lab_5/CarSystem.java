@@ -75,6 +75,16 @@ public class CarSystem {
         map.add(new Car(map));
         map.add(new Car(map,3,4));
         map.run(directions);
-       
+        
+        String draw_map = new MapVisualizer().dump(map, new Position(0,0), new Position(10,5));
+        out.println(draw_map);
+        
+        // cos nie rysuje
+        /*
+        Car car3 = new Car (map, 3,3);
+        out.println(car3.toString());
+        */
+          
+         
     }
 }
