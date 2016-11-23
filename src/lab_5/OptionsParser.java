@@ -25,23 +25,29 @@ public class OptionsParser {
                 i++;
             }
            
-            if(text.equals("backward") || text.equals("b"))
+            else if(text.equals("backward") || text.equals("b"))
             {
                 Direction[i] = MoveDirection.Backward;
                 i++;
             }
            
-            if(text.equals("right") || text.equals("r"))
+            else if(text.equals("right") || text.equals("r"))
             {
                 Direction[i] = MoveDirection.Right;
                 i++;
             }
            
-            if(text.equals("lefet") || text.equals("l"))
+            else if(text.equals("left") || text.equals("l"))
             {
                 Direction[i] = MoveDirection.Left;
                 i++;
             }
+            
+            else
+            {
+            	throw new IllegalArgumentException(text + " is invalid");
+            }
+            
         }
         return Direction;
     }

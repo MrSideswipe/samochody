@@ -36,7 +36,10 @@ public class RectangularMap implements IWorldMap {
             cars.add(car);
             return true;
         }
-        return false;
+        else
+        {
+        	 throw new IllegalArgumentException(car.getPosition().toString() + " is invalid");
+        }
        
     }
  
@@ -52,9 +55,9 @@ public class RectangularMap implements IWorldMap {
  
     @Override
     public boolean isOccupied(Position position) {
-        Iterator i = cars.iterator();
+        Iterator<Car> i = cars.iterator();
         while (i.hasNext()) {
-            Car c = (Car) i.next();
+            Car c = i.next();
             if (c.getPosition().equals(position))
                 return true;
         }
